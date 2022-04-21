@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rune Factory</title>
+  <script type="text/javascript" src="vue.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="app">
+    <div>
+      <label>Character:</label>
+      <select v-model="selected" v-on:change="displaySelectedNameInfo($event)">
+        <option v-for="c in characters" v-bind:value="c.name" v-text="c.name"></option>
+      </select>
+    </div>
+    <div>
+      <label>Items:</label>
+      <select v-model="selectedItem" v-on:change="displaySelectedItemInfo($event)">
+        <option v-for="i in items" v-bind:value="i" v-text="i"></option>
+      </select>
+    </div>
+    <div v-html="selectedInfo">
+    </div>
+    </div>
+  </section>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
