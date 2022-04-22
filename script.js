@@ -293,7 +293,6 @@ var vm = new Vue({
 		for (const [key, value] of Object.entries(element)) {
 			if (key != 'name')
 			{
-				// console.log(`${key}: ${value}`);
 				value.forEach(function(el)
 				{
 					if (!newArray.includes(el))
@@ -306,7 +305,6 @@ var vm = new Vue({
     })
 
 	this.items = newArray.sort();
-	console.log(this.items);
   },
   methods: {
     displaySelectedNameInfo: function(event) {
@@ -317,9 +315,9 @@ var vm = new Vue({
         if (selectedName == element.name)
         {
           vm.selectedInfo = `Loves: ${element.loves.join(', ')}<br /><br />
-          Likes: ${element.likes.join(', ')}<br /><br />
-          Dislikes: ${element.dislikes.join(', ')}<br /><br />
-          Hates: ${element.hates.join(', ')}`;
+          Likes: ${element.likes.sorty().join(', ')}<br /><br />
+          Dislikes: ${element.dislikes.sort().join(', ')}<br /><br />
+          Hates: ${element.hates.sort().join(', ')}`;
         }
       });
     },
@@ -337,7 +335,6 @@ var vm = new Vue({
 					{
 						if (el == selectedItem)
 						{
-							// console.log(`${element.name} loves ${selectedItem}`)
 							textString += `${element.name} loves ${selectedItem}<br />`;
 						}
 					})
@@ -347,7 +344,6 @@ var vm = new Vue({
 					{
 						if (el == selectedItem)
 						{
-							// console.log(`${element.name} loves ${selectedItem}`)
 							textString += `${element.name} likes ${selectedItem}<br />`;
 						}
 					})
@@ -357,7 +353,6 @@ var vm = new Vue({
 					{
 						if (el == selectedItem)
 						{
-							// console.log(`${element.name} loves ${selectedItem}`)
 							textString += `${element.name} dislikes ${selectedItem}<br />`;
 						}
 					})
@@ -368,7 +363,6 @@ var vm = new Vue({
 					{
 						if (el == selectedItem)
 						{
-							// console.log(`${element.name} loves ${selectedItem}`)
 							textString += `${element.name} hates ${selectedItem}<br />`;
 						}
 					})
