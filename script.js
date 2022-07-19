@@ -315,7 +315,7 @@ var vm = new Vue({
         if (selectedName == element.name)
         {
           vm.selectedInfo = `Loves: ${element.loves.join(', ')}<br /><br />
-          Likes: ${element.likes.sorty().join(', ')}<br /><br />
+          Likes: ${element.likes.sort().join(', ')}<br /><br />
           Dislikes: ${element.dislikes.sort().join(', ')}<br /><br />
           Hates: ${element.hates.sort().join(', ')}`;
         }
